@@ -10,7 +10,7 @@ export default function CharacterList(props) {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
-    const getCharacters = () => {
+    const getCharacters = props => {
       axios
         .get("https://rickandmortyapi.com/api/character/")
         .then(response => {
