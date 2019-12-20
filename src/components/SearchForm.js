@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
-import CharacterList from "./CharacterList";
 
 export default function SearchForm(props) {
   const [searchName, setSearchName] = useState("");
 
   const [searchResults, setSearchResults] = useState([]);
-
-  // useEffect(
-  //   props => {
-  //     const results = characters.filter(character =>
-  //       character.toLowerCase().includes(searchName.toLocaleLowerCase())
-  //     );
-  //     setSearchResults(results);
-  //   },
-  //   [searchName]
-  // );
+  useEffect(() => {
+    const characters = [];
+    const results = characters.filter(character =>
+      character.name.toLowerCase().includes(searchName.toLocaleLowerCase())
+    );
+    setSearchResults(results);
+  }, [searchName]);
 
   const handleChange = event => {
     setSearchName(event.target.value);

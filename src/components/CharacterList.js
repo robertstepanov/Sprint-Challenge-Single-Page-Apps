@@ -30,6 +30,7 @@ export default function CharacterList(props) {
         {characters.map(character => {
           return (
             <CharacterCard
+            key={character.id}
               name={character.name}
               status={character.status}
               species={character.species}
